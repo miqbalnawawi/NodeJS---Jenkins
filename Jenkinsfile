@@ -15,9 +15,6 @@ node('master') {
         sh "docker run -it -d --name nodejs2 -p 9001:9005 $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER}"
     }
     
-   // stage('Remove Docker Image') {
-    //    sh "docker rmi $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER} --force"   
-   // }
     stage("Clean Workspace"){
      cleanWs() 
         
